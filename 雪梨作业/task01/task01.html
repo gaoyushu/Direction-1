@@ -1,0 +1,68 @@
+<!-- 任务：task01 表单 -->
+<!-- 学号：2017011951 -->
+<!-- 姓名：高予蜀 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task01</title>
+</head>
+<body>
+
+    <h1 style="margin-left: 20px">毕业生信息</h1>
+
+    <form id="taskform" method="get" action="" style="margin-left: 25px; margin-right: 25px;">
+
+    <!-- 学生信息 -->
+
+        <fieldset>
+
+            <legend style="color: red">学生信息</legend>
+            
+            姓&nbsp;&nbsp;名
+            <input type="text" name="name" placeholder="请输入姓名" autofocus required />
+            <span style="color: red">*</span>
+        </br>
+            学&nbsp;&nbsp;号
+            <input type="tel" name="num" placeholder="请输入学号" required />
+            <span style="color: red">*</span>
+        </br>
+            手&nbsp;&nbsp;机
+            <input type="tel" name="phone" placeholder="请输入手机号" required />
+            <span style="color: red">*</span>
+        </br>
+            邮&nbsp;&nbsp;箱
+            <input type="email" name="email" placeholder="请输入邮箱地址" required />
+            <span style="color: red">*</span>
+        
+        </fieldset>
+
+</br>
+
+    <!-- 录取情况 -->
+
+        <fieldset>
+            
+            <legend style="color: red">录取情况</legend>
+            
+            录取学校
+            <input type="text" name="school" />
+        </br>
+            入学成绩
+            <input type="number" name="score" />
+        </br>
+            入学时间
+            <input type="date" name="time" />
+        
+        </fieldset>
+
+</br>
+
+        <input type="submit" id="taskform"/>
+
+    </form>
+</body>
+</html>

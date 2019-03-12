@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="img/snowflake.png" />
+</head>
+
+<body>
+    <div id="lon"></div>
+    <div id="lat"></div>
+    <div id="accuracy"></div>
+    <script>
+
+        // 检测：浏览器是否支持位置定位
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition, errorPosition);
+            
+        }else{
+            document.write("您的浏览器不支持H5地理位置定位！");
+       }
+
+        // 函数：批量获取id
+        function getE(id){
+            return document.getElementById(id);
+        }
+
+        // 函数：显示地理位置
+        function showPosition(data){
+            getE(lon).innerHTML = ("经度：" + data.coords.latitude);
+            getE(lat).innerHTML = ("纬度：" + data.coords.longitude);
+            getE(accuracy).innerHTML = ("精确度：" + data.coords.accuracy + "米");
+        }
+
+        // 函数：返回错误参数
+        function errorPosition(err){
+            document.write(err.code + ":" + err.message);
+        }
+    </script>
+</body>
+
+</html>

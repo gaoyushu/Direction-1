@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  	<title>form属性示例</title>
+  	<meta charset="UTF-8">
+</head>
+<body>
+	<form id="testform" method="get" action="">
+		<fieldset>
+			<legend>学生信息</legend>
+			姓&nbsp;&nbsp;名：<input type="text" name="name1" autofocus="autofocus" required placeholder="请输入姓名"/>
+			<input type="file" name="fn" multiple=2/>
+			<input type="submit" value="提交"/>
+		</fieldset>
+	</form>
+	<br/>
+	自我介绍：<textarea name="textarea1" form="testform"></textarea>
+</body>
+</html>

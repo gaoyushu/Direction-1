@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Audio-控制播放与暂停</title>
+	<meta charset="utf-8"/>
+	<link rel="icon" href="../img/snowflake.png" />
+	<script>
+
+		//play
+		function play(){
+			//获取元素
+			var playbutton = document.getElementById('playaudio');
+			var pausebutton = document.getElementById('pauseaudio');
+			//var fastbutton = document.getElementById('fastaudio');
+			var audio = document.getElementById('audios');
+			audio.play(); // 调用audio的play方法
+			playbutton.disabled = true;	
+			pausebutton.disabled = false;
+			//fastbutton.disabled = false;
+		}
+
+		//pause
+		function pause(){
+			var audio = document.getElementById('audios');
+			var playbutton = document.getElementById('playaudio');
+			var pausebutton = document.getElementById('pauseaudio');
+			//var fastbutton = document.getElementById('fastaudio');
+			pausebutton.disabled = true;
+			playbutton.disabled = false;
+			//fastaudio.disabled = true;
+			audio.pause();
+		}
+
+		//fast
+		function fast(){
+			var audio = document.getElementById('audios');
+			audio.currentTime += 5;
+		}
+		
+	</script>
+</head>
+<body >
+	<audio controls src="01.mp3" id="audios">
+		您的浏览器不支持Audio标签
+	</audio>
+</br>
+	<input type='button' value="播放" id="playaudio"  onclick = "play()" />
+	<input type="button" value="暂停" id="pauseaudio" disabled="disabled"  onclick = "pause()" />
+	<input type="button" value="快进" id="fastaudio" onclick = "fast()" />
+</body>
+</html>
