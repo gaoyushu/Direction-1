@@ -27,7 +27,7 @@
             <span style="color: red">*</span>
         </br>
             学&nbsp;&nbsp;号
-            <input type="tel" name="num" placeholder="请输入学号" required />
+            <input type="number" name="num" placeholder="请输入学号" required />
             <span style="color: red">*</span>
         </br>
             手&nbsp;&nbsp;机
@@ -49,7 +49,11 @@
             <legend style="color: red">录取情况</legend>
             
             录取学校
-            <input type="text" name="school" />
+            <input type="search" name="school" autocomplete="on" list="schools"/>
+            <datalist id="schools">
+                <option>河北师范大学</option>
+                <option>河北科技大学</option>
+            </datalist>
         </br>
             入学成绩
             <input type="number" name="score" />
@@ -59,10 +63,11 @@
         
         </fieldset>
 
+    </form>
+    
 </br>
 
-        <input type="submit" id="taskform" value="提交"/>
+    <input type="submit" form="taskform" value="提交"/>
 
-    </form>
 </body>
 </html>
