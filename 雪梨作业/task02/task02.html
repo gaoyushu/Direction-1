@@ -1,0 +1,117 @@
+<!-- 任务：task02 web存储 -->
+<!-- 学号：2017011951 -->
+<!-- 姓名：高予蜀 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task02</title>
+    <style>
+        .searchbtn{
+            width: 250px;
+            height: 30px;
+        }
+        .showbtn{
+            width: 200px;
+            height: 30px;
+        }
+        .clearBtn{
+            float: right;
+            text-align: center;
+            background: rgb(228, 228, 228); 
+            color: white;
+        }
+        .show{
+            background: rgb(228, 228, 228);
+            margin: 5px;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="searchbtn">
+        <input type="search" id="text" list="historyList" placeholder="请输入想查找的商品" autocomplete="on">
+        <datalist id="historyList"></datalist>
+        <input type="button" value="搜索" onclick="setHistory()">
+    </div>
+
+    <div class="showbtn">
+        <a>最近搜索</a>
+        <button class="clearBtn" onclick="clearHistory()">X</button>
+    </div>
+
+    <div id="historyDiv"></div>
+</body>
+<script>
+
+    window.onload = function(){
+        setList();
+    }
+
+    // setHistory()
+    function setHistory(){
+        var text = document.getElementById("text");
+        var date = new Date().getTime();
+
+        localStorage.setItem(text.value, date);
+        text.value = "";
+
+        clearList();
+        setList();
+    }
+
+
+    // clearhistory()
+    function clearHistory(){
+        localStorage.clear();
+        clearList();
+    }
+
+    // set list
+    function setList(){
+
+        var historyList = document.getElementById("historyList");
+        var historyDiv = document.getElementById("historyDiv");
+
+        for(var i = 0; i < localStorage.length; i++){
+            var key = localStorage.key(i);
+
+            var newNode = document.createElement("option");
+            newNode.id = localStorage.getItem(key);
+            newNode.innerHTML = key;
+            historyList.appendChild(newNode);
+
+            var newNode = document.createElement("a");
+            newNode.className = "show";
+            newNode.id = "show" + localStorage.getItem(key);
+            newNode.innerHTML = key;
+            historyDiv.appendChild(newNode);
+        }
+    }
+
+    // clear list
+    function clearList(){
+
+        var historyList = document.getElementById("historyList");
+        var historyDiv = document.getElementById("historyDiv");
+
+        if(historyList.hasChildNodes()){
+            var length = historyList.childNodes.length;
+            for(var i = 0; i < length; i++){
+                historyList.removeChild(historyList.lastChild);
+            }
+        }
+
+        if(historyDiv.hasChildNodes()){
+            var length = historyDiv.childNodes.length;
+            for(var i = 0; i < length; i++){
+                historyDiv.removeChild(historyDiv.lastChild);
+            }
+        }
+    }
+</script>
+</html>
