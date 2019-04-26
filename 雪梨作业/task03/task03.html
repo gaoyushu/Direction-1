@@ -1,0 +1,84 @@
+<!-- 任务：task03 -->
+<!-- 学号：2017011951 -->
+<!-- 姓名：高予蜀 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task03</title>
+    <style>
+        #prize{
+            width: 352px;
+            height: 202px;
+            position: absolute;
+            z-index: 0;
+            background: url(timg.jpg) no-repeat;
+            background-size: 352px 202px;
+        }
+        #canvas{
+            position: absolute;
+            z-index: 1;
+            border: #000 solid 2px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="prize"></div>
+        <canvas id="canvas" width="350px" height="200px"></canvas>
+    </div>
+</body>
+<script>
+    
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext('2d');
+
+    // 刮开层涂色
+    context.beginPath();
+    context.fillStyle= '#000';
+    context.fillRect(0,0,350,200);
+
+    // 鼠标点下后移动
+    canvas.onmousedown=function(){
+        canvas.onmousemove = function(){
+
+            // 获取鼠标坐标
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // 涂抹区域
+            context.globalCompositeOperation = "destination-out";
+            context.beginPath();
+            context.arc(x,y,30,0,Math.PI*2);
+            context.fill();
+            canClear();
+            }
+    }
+    
+    // 鼠标抬起
+    canvas.onmouseup=function(){
+        canvas.onmousemove = function(){
+        }
+    } 
+
+    // 判断刮奖程度
+    function canClear(){
+        var imgData = context.getImageData(0, 0,350, 200);
+        var iNum = 0;
+    
+        for(var i = 3; i < imgData.data.length; i += 4){
+            if(imgData.data[i] == 0){
+                iNum++;
+            }
+        }
+
+        if(iNum >= 0.85*200*350){
+            context.clearRect(0, 0, 350, 200);
+        }
+    }
+
+</script>
+</html>
