@@ -15,3 +15,5 @@
 ## 雪梨作业
 * [作业汇总](/作业汇总)  
   > [task01](http://gaoyushu.github.io/Direction-1/雪梨作业/task01/task01.html)
+  > [task02](http://gaoyushu.github.io/Direction-1/雪梨作业/task02/task02.html)
+  > [task03](http://gaoyushu.github.io/Direction-1/雪梨作业/task03/task03.html)
