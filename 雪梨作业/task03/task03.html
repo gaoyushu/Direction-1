@@ -36,36 +36,42 @@
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext('2d');
 
-    // 刮开层涂色
+    // 初始：刮开层涂色
     context.beginPath();
-    context.fillStyle= '#000';
-    context.fillRect(0,0,350,200);
+    context.fillStyle =' #000';
+    context.fillRect(0, 0, 350, 200);
 
-    // 鼠标点下后移动
-    canvas.onmousedown=function(){
-        canvas.onmousemove = function(){
+    // 事件：点涂 -> 鼠标点击
+    canvas.onclick = draw;
 
-            // 获取鼠标坐标
-            var x = event.clientX;
-            var y = event.clientY;
-
-            // 涂抹区域
-            context.globalCompositeOperation = "destination-out";
-            context.beginPath();
-            context.arc(x,y,30,0,Math.PI*2);
-            context.fill();
-            canClear();
-            }
+    // 事件：涂抹开始 -> 鼠标点下后移动
+    canvas.onmousedown = function(){
+        canvas.onmousemove = draw;
     }
     
-    // 鼠标抬起
-    canvas.onmouseup=function(){
+    // 事件：涂抹结束 -> 鼠标抬起后移动
+    canvas.onmouseup = function(){
         canvas.onmousemove = function(){
         }
     } 
 
-    // 判断刮奖程度
+    // 函数：刮开相应位置
+    function draw(){
+
+        var x = event.clientX;
+        var y = event.clientY;
+
+        context.globalCompositeOperation = "destination-out";
+        context.beginPath();
+        context.arc(x, y, 30, 0, Math.PI*2);
+        context.fill();
+        canClear();
+
+    }
+
+    // 函数：判断刮奖程度
     function canClear(){
+        
         var imgData = context.getImageData(0, 0,350, 200);
         var iNum = 0;
     
@@ -76,9 +82,10 @@
         }
 
         if(iNum >= 0.85*200*350){
-            context.clearRect(0, 0, 350, 200);
+            setTimeout(function(){
+                context.clearRect(0, 0, 350, 200);
+            }, 500);
         }
     }
-
 </script>
 </html>
