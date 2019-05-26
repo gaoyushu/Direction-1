@@ -53,6 +53,8 @@
             width: 400px;
             height: 250px;
             overflow: hidden;
+            transform: scale(1);
+            transition: transform 1s ease-in-out;
         }
 
         /* details */
@@ -63,6 +65,7 @@
             overflow: hidden;
             top: 225px;
             z-index: 999;
+            transition: transform 1s ease-in-out;
         }
 
         #tip{
@@ -86,6 +89,7 @@
             padding: 1px 20px;
             opacity: 0;
             background: #fff;
+            animation: textmove2 0.5s;
         }
         a{
             text-decoration: none;
@@ -118,14 +122,21 @@
             transition: transform 1s ease-in-out;
         }
         #container:hover #text2{
-            animation: textmove 1s 0.5s;
+            animation: textmove1 1s 0.5s;
             animation-fill-mode: forwards;
         }
-        @keyframes textmove{
+        @keyframes textmove1{
             0% {
                 opacity: 0;
             } 100% {
                 opacity: 1;
+            }
+        }
+        @keyframes textmove2{
+            0% {
+                opacity: 1;
+            } 100% {
+                opacity: 0;
             }
         }
 
