@@ -1,0 +1,156 @@
+<!-- 任务：task04 -->
+<!-- 学号：2017011951 -->
+<!-- 姓名：高予蜀 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task04</title>
+    <style>
+        #container{
+            width: 400px;
+            height: 450px;
+            position: relative;
+            background: #fff;
+            box-shadow: 5px 5px 10px #000;
+            overflow: hidden;
+        }
+
+        /* timelogo */
+        #timelogo{
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgb(245, 131, 24);
+            border-radius: 50px;
+            position: absolute;
+            z-index: 999;
+            top: 20px;
+            right: 20px;
+            background: rgb(245, 131, 24);
+            color: #fff;
+            text-align: center;
+        }
+        #timelogo p{
+            line-height: 0px;
+        }
+
+        /* imgbox */
+        #imgshadow{
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            opacity: 0;
+            z-index: 998;
+        }
+
+        #showimg{
+            width: 400px;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        /* details */
+        #details{
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            overflow: hidden;
+            top: 225px;
+            z-index: 999;
+        }
+
+        #tip{
+            width: 60px;
+            height: 25px;
+            background: rgb(245, 131, 24);
+            color: #fff;
+            font-size: 15px;
+            text-align: center;
+        }
+        #text{
+            width: 400px;
+            height: 170px;
+            background: #fff;
+        }
+        #text1{
+            padding: 1px 20px;
+            line-height: 25px;
+        }
+        #text2{
+            padding: 1px 20px;
+            opacity: 0;
+            background: #fff;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        #bottom{
+            width: 340px;
+            height: 30px;
+            padding: 0 30px;
+            position: absolute;
+            bottom: 0px;
+            background: #fff;
+            font-size: 13px;
+            color: rgb(156, 154, 154);
+        }
+
+        /* 效果实现 */
+        #container:hover #imgshadow{
+            background-color: #000;
+            opacity: 0.2;
+        }
+        #container:hover #showimg{
+            width: 400px;
+            transform: scale(1.2);
+            transition: transform 1s ease-in-out;
+        }
+
+        #container:hover #details{
+            transform: translateY(-70px);
+            transition: transform 1s ease-in-out;
+        }
+        #container:hover #text2{
+            animation: textmove 1s 0.5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes textmove{
+            0% {
+                opacity: 0;
+            } 100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="timelogo"><p>15</p><p>五月</p></div>
+        <!-- <div id="imgbox"> -->
+            <div id="imgshadow"></div>
+            <img id="showimg" src="show.png">
+        <!-- </div> -->
+        <div id="details">
+            <div id="tip">照片</div>
+            <div id="text">
+                <div id="text1">
+                    <p style="font-weight: bold; font-size: 22px">名濑博臣</p>
+                    <p style="color: rgb(245, 131, 24); font-size: 20px;">Nase Hiroomi</p>
+                </div>
+                <div id="text2">
+                    <a>名濑博臣（なせ ひろおみ），日本轻小说及其改编动画《境界的彼方》主要人物之一。异界士中远近闻名的名濑家的长子。名濑美月的哥哥，极度的妹控，变态中的战斗机。</a>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">ヾ(◍°∇°◍)ﾉﾞ本条资讯来自于NASE HIROOMI的NC粉</div>
+    </div>
+</body>
+</html>
