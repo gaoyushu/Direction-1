@@ -49,6 +49,24 @@ ul li{
     .navbarbig{
         width: 1200px;
         margin: 0 auto;
+        height: 75px;
+    }
+    #bs-1>ul{
+        padding: 10px 0;
+        position: relative;
+        left: 10%;
+    }
+    .navbar-nav>li {
+        font-size: 25px;
+    }
+    #navbtnm{
+        display: none;
+    }
+    #bana>p{
+        display: block;
+    }
+    #bana>p:last-child{
+        display: none;
     }
 }
 @media (max-width: 1199px){
@@ -63,6 +81,35 @@ ul li{
     nav{
         background: #eee;
         margin: 0 auto;
+    }
+    .navbar-nav>li {
+        font-size: 20px;
+    }
+    .navbar-brand {
+        width: 40%;
+        padding: 7px;
+    }
+    #navbtnm{
+        display: block;
+        float: right;
+        width: 25%;
+        background: #e8420a;
+        border-radius: 5px;
+        color: #fff;
+        border: none;
+        padding: 5px 0;
+        margin-right: 3%;
+        margin-top: 10px;
+    }
+    #bana>p{
+        display: none;
+    }
+    #bana>h3{
+        float: left;
+    }
+    #bana>p:last-child{
+        display: block;
+        float: left;
     }
 }
 
@@ -84,12 +131,14 @@ ul li{
     margin-left: 10px;
     list-style: none;
     line-height: 35px;
+    font-size: 25px;
 }
 .blackfix>ul>li{
     color: #fff;
     float: left;
     margin: 0 7px;
     cursor: pointer;
+    font-size: 15px
 }
 .blackfix>a{
     float: right;
@@ -111,7 +160,6 @@ ul li{
     border-color: #eee;
 }
 .navbar-nav>li {
-    font-size: 20px;
     margin: 0 10px;
 }
 
@@ -142,9 +190,6 @@ ul li{
 .navbar-brand {
     float: left;
     height: 100%;
-    padding: 5px 5px;
-    font-size: 18px;
-    line-height: 20px
 }
 
 /* button */
@@ -163,7 +208,7 @@ ul li{
         width: 100%;
         height: 450px;
         overflow: hidden;
-        margin-top: 90px;
+        margin-top: 117px;
     }
     .item{
         height: 450px;
@@ -264,19 +309,23 @@ ul li{
 .banbaa{
 	width: 25%;
 	height: 100%;
-	margin: 0 auto;
+    margin: 0 auto;
     position: absolute;
-    top: 25%;
-	left: 6%;
 }
 .banbaa>img{
     height: 50%;
     float: left;
+    position: relative;
+    left: 20%;
+    top: 25%;
 }
 .banbaa a{
 	float: left;
 	margin-left: 6%;
-	color: #939395;
+    color: #939395;
+    position: relative;
+    top: 28%;
+    left: 25%;
 }
 .banbb{
 	width: 75%;
