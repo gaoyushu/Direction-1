@@ -10,3 +10,15 @@ Bootstrap全局CSS样式
 响应式导航栏
 滚动监听
 轮播图
+
+
+
+
+// 效果补
+1.banner搜索框文字排版
+2.banner箭头
+3.banner文字
+4.导航排版
+5.导航手机端按钮
+6.visa col-md-8内排版宽度 加了background-size/position无法使用
+7.visa 文字排版
