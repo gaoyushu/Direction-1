@@ -552,7 +552,10 @@ ul li{
     #roubap{
         display: block;
     }
-    #roubtn{
+    #route>#roubtn{
+        display: none;
+    }
+    #route>#bigroubtn{
         display: none;
     }
 }
@@ -582,8 +585,12 @@ ul li{
     #roub>.col-md-6:last-child{
         display: none;
     }
-    #roubtn{
+    #route>#roubtn{
         display: block;
+    }
+    #route>#bigroubtn{
+        display: block;
+        padding: 20px;
     }
 }
 #roub{
@@ -713,7 +720,11 @@ ul li{
     .visabb>div{
         height: 30%;
     }
-    #visa>#roubtn{
+    #visa>#bigroubtn{
+        display:block;
+        margin: 0 auto;
+    }
+    #visa #roubtn{
         display: block;
         height: 45px;
         width: 15%;
@@ -759,6 +770,10 @@ ul li{
     }
     #Bban{
         display: none;
+    }
+    #visa>#bigroubtn{
+        display: block;
+        padding: 20px;
     }
 }
 #visa>#rouap>ul{
